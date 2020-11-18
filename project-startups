@@ -1,4 +1,3 @@
-
 SELECT * FROM startups; 
 
 SELECT COUNT(*) FROM startups; 
@@ -24,6 +23,9 @@ GROUP BY category;
 
 SELECT category, ROUND(AVG(valuation), 2)
 FROM startups 
-GROUP BY 1
-ORDER BY 2 DESC; 
+GROUP BY 1; 
 
+SELECT location, AVG(employees) 
+FROM startups 
+GROUP BY location 
+HAVING AVG(employees) > 500; 
